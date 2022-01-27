@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="betApp">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grants Application</title>
+    <link rel="stylesheet" href="./lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="header clearfix">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="#">Home</a></li>
+                    <li role="presentation">
+                        <a href="./entry_form.html">Add Data</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Grants App</h3>
+        </div>
+
+        <div class="jumbotron">
+            <h2>Control Panel </h2>
+        </div>
+
+        <div class="row" ng-controller="MainController">
+
+
+
+            <div class="table-responsive">
+                <table class="table ">
+                    <thead>
+                        <tr>
+                            <th>S/N</th>
+                            <th>Fullname</th>
+                            <th>Status</th>
+                            <th>Gender</th>
+                            <th>Amount</th>
+                            <th>Tax</th>
+                            <th>Country</th>
+                            <th>Tools</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr ng-repeat="item in data track by $index">
+                            <td>{{$index +1}}</td>
+                            <td>{{item.fullname}}</td>
+                            <td>{{item.status}}</td>
+                            <td>{{item.gender}}</td>
+                            <td>{{item.amount}}</td>
+                            <td>{{item.tax}}</td>
+                            <td>{{item.country}}</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" ng-click="viewDetails(item)"> Edit</button>
+                                <button class="btn btn-danger  btn-sm" ng-click="deleteRecord(item)">Delete</button>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+
+    <script src="./lib/angular.min.js"></script>
+    <script src="./lib/moment.min.js"></script>
+    <script src="./lib/angular-moment.min.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
