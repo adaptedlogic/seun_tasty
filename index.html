@@ -1,87 +1,68 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="betApp">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grants Application</title>
-    <link rel="stylesheet" href="./lib/bootstrap.min.css" />
-    <link rel="stylesheet" href="./css/main.css" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="canonical" href="https://getbootstrap.com/docs/3.3/examples/signin/">
+
+    <title> Login Page</title>
+
+
+
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/signin.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body>
+
     <div class="container">
-        <div class="header clearfix">
-            <nav>
-                <ul class="nav nav-pills pull-right">
-                    <li role="presentation" class="active"><a href="#">Home</a></li>
-                    <li role="presentation">
-                        <a href="./entry_form.html">Add Data</a>
-                    </li>
-                </ul>
-            </nav>
-            <h3 class="text-muted">Grants App</h3>
-        </div>
 
-        <div class="jumbotron">
-            <h2>Control Panel </h2>
-        </div>
-
-        <div class="row" ng-controller="MainController">
-
-
-
-            <div class="table-responsive">
-                <table class="table ">
-                    <thead>
-                        <tr>
-                            <th>S/N</th>
-                            <th>Fullname</th>
-                            <th>Status</th>
-                            <th>Gender</th>
-                            <th>Amount</th>
-                            <th>Tax</th>
-                            <th>Country</th>
-                            <th>Tools</th>
-
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr ng-repeat="item in data track by $index">
-                            <td>{{$index +1}}</td>
-                            <td>{{item.fullname}}</td>
-                            <td>{{item.status}}</td>
-                            <td>{{item.gender}}</td>
-                            <td>{{item.amount}}</td>
-                            <td>{{item.tax}}</td>
-                            <td>{{item.country}}</td>
-                            <td>
-                                <button class="btn btn-primary btn-sm" ng-click="viewDetails(item)"> Edit</button>
-                                <button class="btn btn-danger  btn-sm" ng-click="deleteRecord(item)">Delete</button>
-                            </td>
-
-                        </tr>
-                    </tbody>
-                </table>
+        <form class="form-signin">
+            <h4 class="form-signin-heading">Please enter your username and password</h4>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <div class="checkbox">
+                <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
             </div>
-        </div>
+            <button class="btn btn-lg btn-primary btn-block" type="button" id="btnSummit">Sign in</button>
+        </form>
+
     </div>
+    <!-- /container -->
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
 
-    <script src="./lib/angular.min.js"></script>
-    <script src="./lib/moment.min.js"></script>
-    <script src="./lib/angular-moment.min.js"></script>
-    <script src="./js/app.js"></script>
 </body>
+
+<script src="./lib/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+
+        $("#btnSummit").click(function() {
+            window.location = "./dashboard.html";
+        });
+
+    });
+</script>
 
 </html>
